@@ -205,7 +205,7 @@ SDL_RenderPresent(sdlRenderer);
 <h4>Other Renderer API notes</h4>
 <p>You can do some simple effects with the render API without having to get down into direct pixel manipulation. Some of these were available on 1.2 surfaces.</p>
 <ul>
-<li>Color alpha: <a href="SDL_Color.html">SDL_Color</a> now contains a fourth, <strong>alpha</strong> component. Your 1.2 code that deals with SDL_Colors might be not copying/setting that value (which was named unused). In 2.0, you should.</li>
+<li>Color alpha: <a href="structures/SDL_Color.html">SDL_Color</a> now contains a fourth, <strong>alpha</strong> component. Your 1.2 code that deals with SDL_Colors might be not copying/setting that value (which was named unused). In 2.0, you should.</li>
 <li>Alpha blending: use <a href="SDL_SetSurfaceAlphaMod.html">SDL_SetSurfaceAlphaMod</a> and <a href="SDL_SetTextureAlphaMod.html">SDL_SetTextureAlphaMod</a> instead of <tt style="backtick">SDL_SetAlpha()</tt>. Alpha-blending on surfaces can be disabled via <a href="SDL_SetSurfaceBlendMode.html">SDL_SetSurfaceBlendMode</a>() and on textures with <a href="SDL_SetTextureBlendMode.html">SDL_SetTextureBlendMode</a>().</li>
 <li>Colorkey: When calling <a href="SDL_SetColorKey.html">SDL_SetColorKey</a>(), you should pass <tt style="backtick">SDL_TRUE</tt> instead of <tt style="backtick">SDL_SRCCOLORKEY</tt>.</li>
 <li>Color modulation: Some renderers now support a global color alteration (srcC = srcC * color), check <a href="SDL_SetTextureColorMod.html">SDL_SetTextureColorMod</a>() for details.</li>
@@ -230,7 +230,7 @@ SDL_RenderPresent(sdlRenderer);
 <p><tt style="backtick">SDLMod</tt> is now</p>
 <a href="SDL_Keymod.html">SDL_Keymod</a> and its "META" keys (the "Windows" keys) are now called the "GUI" keys.
 <p><tt style="backtick">SDL_GetKeyState()</tt> has been renamed to</p>
-<a href="SDL_GetKeyboardState.html">SDL_GetKeyboardState</a>(). The returned array should now be indexed by SDL_SCANCODE_* values (see <a href="SDL_Scancode.html">SDL_Scancode</a>) instead of <a href="SDL_Keysym.html">SDL_Keysym</a> values.
+<a href="SDL_GetKeyboardState.html">SDL_GetKeyboardState</a>(). The returned array should now be indexed by SDL_SCANCODE_* values (see <a href="SDL_Scancode.html">SDL_Scancode</a>) instead of <a href="structures/SDL_Keysym.html">SDL_Keysym</a> values.
 <p>Now, for mouse input.</p>
 <p>The first change, simply enough, is that the mousewheel is no longer a button. This was a mistake of history, and we've corrected it in SDL 2.0. Look for</p>
 <a href="SDL_EventType.html">SDL_MOUSEWHEEL</a> events. We support both vertical and horizontal wheels, and some platforms can treat two-finger scrolling on a trackpad as wheel input, too. You will no longer receive <a href="SDL_EventType.html">SDL_BUTTONDOWN</a> events for mouse wheels, and buttons 4 and 5 are real mouse buttons now.
@@ -308,7 +308,7 @@ SDL_AddEventWatch(myEventFilter, data);
 <h3>RWops</h3>
 <a href="SDL_RWread.html">SDL_RWread</a>() and <a href="SDL_RWwrite.html">SDL_RWwrite</a>() now return <tt style="backtick">0</tt> on error instead of <tt style="backtick">-1</tt>.
 <p>If you wrote your own</p>
-<a href="SDL_RWops.html">SDL_RWops</a> implementation, the function signatures have changed. Functions now use <tt style="backtick">Sint64</tt> and <tt style="backtick">size_t</tt> instead of <tt style="backtick">int</tt> so they can work with large files. In many cases, you can just update your function signatures and keep working as before, but if you had bumped up against these limitations, you might be happy to have a solution. Calling applications should know that the return values have changed.
+<a href="structures/SDL_RWops.html">SDL_RWops</a> implementation, the function signatures have changed. Functions now use <tt style="backtick">Sint64</tt> and <tt style="backtick">size_t</tt> instead of <tt style="backtick">int</tt> so they can work with large files. In many cases, you can just update your function signatures and keep working as before, but if you had bumped up against these limitations, you might be happy to have a solution. Calling applications should know that the return values have changed.
 <p>There is also a <strong>size</strong> method to RWops, now. This lets a RWops report the size of the stream without having to make the app seek to zero bytes from the end; in other words, you can report a total size for streams that can't seek. For streams that can't even do that, you can still return -1.</p>
 <h3>Add-on libraries</h3>
 <p>The official extensions SDL_image, SDL_ttf, SDL_mixer and SDL_net have a version dedicated to SDL 2.0 : SDL2_image, SDL2_ttf, SDL2_mixer and SDL2_net. You may need to download them from the</p>
@@ -324,7 +324,7 @@ SDL_AddEventWatch(myEventFilter, data);
 <li>SDL_Surface/2D rendering: surfaces still exist, but it is recommended that instead of using SDL_Surfaces, you use <a href="SDL_Texture.html">SDL_Textures</a> with an 2D accelerated renderer (<a href="SDL_CreateRenderer.html">SDL_CreateRenderer</a>()) where possible</li>
 <li>SDL_VideoInfo: use <a href="SDL_GetRendererInfo.html">SDL_GetRendererInfo</a>()/<a href="SDL_GetRenderDriverInfo.html">SDL_GetRenderDriverInfo</a>() instead</li>
 <li>SDL_GetCurrentVideoDisplay(): use <a href="SDL_GetWindowDisplayIndex.html">SDL_GetWindowDisplayIndex</a>() instead</li>
-<li>SDL_VIDEORESIZE event: the new equivalent is <a href="SDL_WindowEvent">SDL_WINDOWEVENT_RESIZE</a></li>
+<li>SDL_VIDEORESIZE event: the new equivalent is <a href="structures/SDL_WindowEvent.html">SDL_WINDOWEVENT_RESIZE</a></li>
 </ul>
 <h3>Other stuff</h3>
 <p>There's an enormous amount of new and interesting functionality in SDL 2.0 that 1.2 couldn't even dream of. We've only tried to explain what you might have to do to get your 1.2 program running on 2.0 here, but you should explore the documentation for things that you might have always wished for and, until now, done without. For example, every game I've ever ported ended up with a message box function that looked like this:</p>

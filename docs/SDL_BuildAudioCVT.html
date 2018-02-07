@@ -9,7 +9,7 @@
 </script>
 <div id="pagecontent">
 <h1>SDL_BuildAudioCVT</h1>
-<p>Use this function to initialize an <a href="SDL_AudioCVT.html">SDL_AudioCVT</a> structure for conversion.</p>
+<p>Use this function to initialize an <a href="structures/SDL_AudioCVT.html">SDL_AudioCVT</a> structure for conversion.</p>
 <h2>Syntax</h2>
 <div style="codearea">
 <pre>
@@ -25,7 +25,7 @@ int SDL_BuildAudioCVT(SDL_AudioCVT*   cvt,
 <table>
 <tr>
 <td><strong>cvt</strong></td>
-<td>an <a href="SDL_AudioCVT.html">SDL_AudioCVT</a> structure filled in with audio conversion information</td>
+<td>an <a href="structures/SDL_AudioCVT.html">SDL_AudioCVT</a> structure filled in with audio conversion information</td>
 </tr>
 <tr>
 <td><strong>src_format</strong></td>
@@ -68,9 +68,9 @@ SDL_ConvertAudio(&amp;cvt);
 // cvt.buf has cvt.len_cvt bytes of converted data now.
 </pre></div>
 <h2>Remarks</h2>
-<p>Before an <a href="SDL_AudioCVT.html">SDL_AudioCVT</a> structure can be used to convert audio data it must be initialized with source and destination information.</p>
-<p>This function will zero out every field of the <a href="SDL_AudioCVT.html">SDL_AudioCVT</a>, so it must be called before the application fills in the final buffer information.</p>
-<p>Once this function has returned successfully, and reported that a conversion is necessary, the application fills in the rest of the fields in <a href="SDL_AudioCVT.html">SDL_AudioCVT</a>, now that it knows how large a buffer it needs to allocate, and then can call <a href="SDL_ConvertAudio.html">SDL_ConvertAudio</a>() to complete the conversion.</p>
+<p>Before an <a href="structures/SDL_AudioCVT.html">SDL_AudioCVT</a> structure can be used to convert audio data it must be initialized with source and destination information.</p>
+<p>This function will zero out every field of the <a href="structures/SDL_AudioCVT.html">SDL_AudioCVT</a>, so it must be called before the application fills in the final buffer information.</p>
+<p>Once this function has returned successfully, and reported that a conversion is necessary, the application fills in the rest of the fields in <a href="structures/SDL_AudioCVT.html">SDL_AudioCVT</a>, now that it knows how large a buffer it needs to allocate, and then can call <a href="SDL_ConvertAudio.html">SDL_ConvertAudio</a>() to complete the conversion.</p>
 <h2>Related Functions</h2>
 <ul style="list-style-type:none">
 <li><a href="SDL_ConvertAudio.html">SDL_ConvertAudio</a></li>

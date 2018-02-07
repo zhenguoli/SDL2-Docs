@@ -33,7 +33,7 @@ if (myEventType != ((Uint32)-1)) {
 }
 </pre></div>
 <h2>Remarks</h2>
-<p><a href="../SDL_UserEvent.html">SDL_UserEvent</a> is in the <strong>user</strong> member of the <a href="../SDL_Event.html">SDL_Event</a> union. This event is unique; it is never created by SDL but only by the application. The event can be pushed onto the event queue using <a href="../SDL_PushEvent.html">SDL_PushEvent</a>(). The contents of the structure members are completely up to the programmer; the only requirement is that <strong>type</strong> is a value obtained from <a href="../SDL_RegisterEvents.html">SDL_RegisterEvents</a>().
+<p><a href="SDL_UserEvent.html">SDL_UserEvent</a> is in the <strong>user</strong> member of the <a href="SDL_Event.html">SDL_Event</a> union. This event is unique; it is never created by SDL but only by the application. The event can be pushed onto the event queue using <a href="../SDL_PushEvent.html">SDL_PushEvent</a>(). The contents of the structure members are completely up to the programmer; the only requirement is that <strong>type</strong> is a value obtained from <a href="../SDL_RegisterEvents.html">SDL_RegisterEvents</a>().
 <h2>Related Enumerations</h2>
 <ul style="list-style-type:none"><li><a href="../SDL_EventType.html">SDL_EventType</a></li></ul> 
 <h2>Related Functions</h2>

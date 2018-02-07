@@ -21,7 +21,7 @@ SDL_Init(SDL_INIT_VIDEO);
 </li>
 </ul>
 <p>Internally, SDL stores all the events waiting to be handled in an event queue. Using functions like <a href="SDL_PollEvent.html">SDL_PollEvent</a>(), <a href="SDL_PeepEvents.html">SDL_PeepEvents</a>() and <a href="SDL_WaitEvent.html">SDL_WaitEvent</a>() you can observe and handle waiting input events.</p>
-<p>The event queue itself is composed of a series of <a href="SDL_Event.html">SDL_Event</a> structures, one for each waiting event. <a href="SDL_Event.html">SDL_Event</a> structures are read from the queue with the <a href="SDL_PollEvent.html">SDL_PollEvent</a>() function and it is then up to the application to process the information stored with them.</p>
+<p>The event queue itself is composed of a series of <a href="structures/SDL_Event.html">SDL_Event</a> structures, one for each waiting event. <a href="structures/SDL_Event.html">SDL_Event</a> structures are read from the queue with the <a href="SDL_PollEvent.html">SDL_PollEvent</a>() function and it is then up to the application to process the information stored with them.</p>
 <h2>Enumerations</h2>
 <ol start="1">
 <li><a href="SDL_EventType.html">SDL_EventType</a></li>
